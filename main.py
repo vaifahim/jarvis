@@ -16,7 +16,8 @@ app.add_middleware(
 )
 
 # জেমিনি ক্লায়েন্ট ইনিশিয়ালাইজ করা
-client = genai.Client()
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
 
 class CommandRequest(BaseModel):
     command: str
