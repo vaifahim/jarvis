@@ -95,11 +95,12 @@ async def process_command(req: CommandRequest):
         )
         
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-        )
-        
-        return {"status": "success", "response": response.text}
+    model='gemini-2.0-flash',
+    contents=prompt,
+)
+
+return {"status": "success", "response": response.text}
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
